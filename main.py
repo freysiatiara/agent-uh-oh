@@ -21,6 +21,8 @@ def output_path() -> str:
 
 
 def main() -> None:
+    if not WORD or len(WORD) > 99 or WORD.split() != [WORD]:
+        raise ValueError("entry word must be one non-blank word of 1-99 chars")
     path = output_path()
     directory = os.path.dirname(path)
     if directory:
